@@ -1,0 +1,65 @@
+# Adobe Creative Cloud Knowledge Base
+
+## Overview
+Adobe Creative Cloud is a set of applications and services from Adobe Inc. that gives subscribers access to a collection of software used for graphic design, video editing, web development, photography, along with a set of mobile applications and also some optional cloud services.
+
+## Core Applications
+
+### Photoshop
+- **Use**: Image editing and compositing.
+- **Features**: Generative Fill, adjustment layers, masking, neural filters, remove background.
+- **Best for**: Photographers, graphic designers, digital artists.
+
+### Illustrator
+- **Use**: Vector graphics and illustration.
+- **Features**: Pen tool, shape builder, vector tracing, typography tools, Generative Recolor.
+- **Best for**: Logo design, typography, illustrations, scalable graphics.
+
+### Premiere Pro
+- **Use**: Professional video editing.
+- **Features**: Timeline editing, color grading (Lumetri), audio mixing, motion graphics templates, text-based editing.
+- **Best for**: YouTubers, filmmakers, video editors.
+
+### After Effects
+- **Use**: Cinematic visual effects and motion graphics.
+- **Features**: Keyframing, 3D tracking, expressions, rotoscoping, particle systems.
+- **Best for**: Motion designers, VFX artists.
+
+### Lightroom
+- **Use**: Cloud-based photo service with storage.
+- **Features**: Non-destructive editing, preset management, cloud sync, AI masking.
+- **Best for**: Professional and amateur photographers managing large catalogs.
+
+## Pricing Plans
+
+1. **All Apps Plan**: 
+   - $59.99/month (Individual)
+   - Includes access to 20+ desktop and mobile apps (Photoshop, Illustrator, Premiere Pro, etc.).
+   - Includes 100GB of cloud storage, Adobe Fonts, and Adobe Portfolio.
+
+2. **Photography Plan**: 
+   - $19.99/month
+   - Includes Lightroom, Lightroom Classic, Photoshop on desktop and iPad.
+   - Includes 1TB cloud storage.
+
+3. **Single App Plan**:
+   - $22.99/month per app (e.g., just Photoshop or just Illustrator).
+   - Includes 100GB cloud storage.
+
+4. **Students and Teachers Plan**:
+   - $19.99/month for the first year, then $34.99/month.
+   - Includes all apps in the Creative Cloud suite.
+
+5. **Business Plan**:
+   - $89.99/month per license.
+   - Includes all apps, admin console for license management, 1TB storage per user, 24/7 tech support.
+
+## Integrations & Collaboration
+- **Frame.io**: Built into Premiere Pro and After Effects for real-time video review and collaboration.
+- **Creative Cloud Libraries**: Share assets (colors, logos, character styles) across apps and teams.
+- **Third-party Plugins**: Extensive support for plugins in Premiere Pro, After Effects, and Photoshop via the Adobe Exchange.
+
+## System Requirements & Support
+- Most applications require Windows 10/11 or macOS 12+.
+- Support queries are handled via 24/7 live chat, community forums, and comprehensive documentation at helpx.adobe.com.
+- Subscription billing is monthly or annual. Cancellation within 14 days of purchase offers a full refund.
