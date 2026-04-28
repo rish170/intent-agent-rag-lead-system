@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, ArrowLeft, Bot, User, Activity } from "lucide-react";
+import ReactMarkdown from "react-markdown";
 
 type Message = {
   id: string;
@@ -117,10 +118,18 @@ export default function ChatPage() {
                   
                   <div className={`glass-panel rounded-2xl px-5 py-3.5 text-sm sm:text-base leading-relaxed ${
                     msg.role === "user" 
-                      ? "bg-gradient-to-br from-neonBlue/20 to-neonPurple/20 border-white/20 rounded-tr-sm" 
+                      ? "bg-gradient-to-br from-neonBlue/20 to-neonPurple/20 border-white/20 rounded-tr-sm whitespace-pre-wrap" 
                       : "bg-white/5 rounded-tl-sm"
                   }`}>
-                    {msg.content}
+                    {msg.role === "ai" ? (
+                      <div className="prose prose-invert prose-sm sm:prose-base max-w-none prose-p:leading-relaxed prose-pre:bg-black/50">
+                        <ReactMarkdown>
+                          {msg.content}
+                        </ReactMarkdown>
+                      </div>
+                    ) : (
+                      msg.content
+                    )}
                   </div>
                 </div>
               </motion.div>

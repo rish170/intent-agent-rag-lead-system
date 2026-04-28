@@ -11,12 +11,14 @@
   "dependencies": {
     "@react-three/drei": "^9.105.6",
     "@react-three/fiber": "^8.16.2",
+    "@tailwindcss/typography": "^0.5.19",
     "framer-motion": "^11.1.7",
     "gsap": "^3.12.5",
     "lucide-react": "^0.376.0",
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",
+    "react-markdown": "^10.1.0",
     "three": "^0.164.0"
   },
   "devDependencies": {

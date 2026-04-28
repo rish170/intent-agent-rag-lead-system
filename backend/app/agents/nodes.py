@@ -10,12 +10,37 @@ from dotenv import load_dotenv
 dotenv_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '.env'))
 load_dotenv(dotenv_path)
 
-# Initialize OpenRouter / Groq model
-llm = ChatOpenAI(
+# Initialize primary OpenRouter model (Gemma 3 12B - confirmed working by user)
+llm_primary = ChatOpenAI(
     base_url="https://openrouter.ai/api/v1",
     api_key=os.getenv("OPENROUTER_API_KEY", "dummy"),
-    model=os.getenv("MODEL_NAME", "meta-llama/llama-3.2-3b-instruct:free")
+    model=os.getenv("MODEL_NAME", "google/gemma-3-12b-it:free"),
+    max_retries=1
 )
+
+# Initialize fallback models in case the primary one is rate-limited
+llm_fallback_1 = ChatOpenAI(
+    base_url="https://openrouter.ai/api/v1",
+    api_key=os.getenv("OPENROUTER_API_KEY", "dummy"),
+    model="nvidia/nemotron-nano-9b-v2:free",
+    max_retries=1
+)
+
+llm_fallback_2 = ChatOpenAI(
+    base_url="https://openrouter.ai/api/v1",
+    api_key=os.getenv("OPENROUTER_API_KEY", "dummy"),
+    model="meta-llama/llama-3.3-70b-instruct:free",
+    max_retries=1
+)
+
+llm_fallback_3 = ChatOpenAI(
+    base_url="https://openrouter.ai/api/v1",
+    api_key=os.getenv("OPENROUTER_API_KEY", "dummy"),
+    model="meta-llama/llama-3.2-3b-instruct:free",
+    max_retries=1
+)
+
+llm = llm_primary.with_fallbacks([llm_fallback_1, llm_fallback_2, llm_fallback_3])
 
 def intent_node(state: AgentState) -> dict:
     """Detects the user intent from the latest message."""
@@ -113,7 +138,7 @@ def response_node(state: AgentState) -> dict:
     context = state.get("retrieved_docs")
     lead_data = state.get("lead_data", {})
     
-    system_prompt = "You are a helpful AI assistant for Adobe Creative Cloud."
+    system_prompt = "You are a helpful AI assistant for Adobe Creative Cloud. Structure your response with bold headings and clean bulleted lists where appropriate."
     
     if intent == "high_intent" and not state.get("lead_captured"):
         missing = []
